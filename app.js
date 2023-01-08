@@ -24,15 +24,20 @@ const howManyPalindromes = (s) => {
     return (len * (len + 1)) * 0.5;
   }
   let r = null;
+  let part = null;
+  const summary = {};
   for(let i = 0; i < s.length; i++){
     for(let j = i + 2; j <= s.length; j++){
-      if(checkPalindrom(s.slice(i, j))){
-        r = new RegExp(s.slice(i, j), 'g');
+      part = s.slice(i, j);
+      if(checkPalindrom(part)){
+        r = new RegExp(part, 'g');
         len += s.match(r).length;
+        summary[`${i}${j}_palindrome`] = part;
       }
     }
   }
-  return len;
+  summary.quantity = len;
+  return summary;
 }
 
 // end block
@@ -42,10 +47,7 @@ app.get('/', (req, res) => {
 });
 app.post('/', (req, res) => {
     const inp = JSON.parse(JSON.stringify(req.body));
-    const result = {
-      output: howManyPalindromes(inp.input)
-    };
-    res.send(result);
+    res.send(howManyPalindromes(inp.input));
 });
 app.listen(port, () => {
     console.log(`http://localhost:${port}`);
