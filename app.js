@@ -20,12 +20,13 @@ const checkPalindrom = (input) => {
 
 const howManyPalindromes = (s) => {
   let len = s.length;
+  const summary = {};
   if(s.replace(new RegExp(s[0], 'g'), '').length == 0){
-    return (len * (len + 1)) * 0.5;
+    summary.quantity = len;
+    return summary;
   }
   let r = null;
   let part = null;
-  const summary = {};
   for(let i = 0; i < s.length; i++){
     for(let j = i + 2; j <= s.length; j++){
       part = s.slice(i, j);
