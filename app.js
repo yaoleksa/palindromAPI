@@ -24,7 +24,7 @@ const howManyPalindromes = (s) => {
     return (len * (len + 1)) * 0.5;
   }
   let r = null;
-  for(let i = 0; i <= s.length * 0.5; i++){
+  for(let i = 0; i <= s.length; i++){
     for(let j = i + 2; j <= s.length; j++){
       if(checkPalindrom(s.slice(i, j))){
         r = new RegExp(s.slice(i, j), 'g');
