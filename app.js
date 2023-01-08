@@ -22,7 +22,7 @@ const howManyPalindromes = (s) => {
   let len = s.length;
   const summary = {};
   if(s.replace(new RegExp(s[0], 'g'), '').length == 0){
-    summary.quantity = len;
+    summary.quantity = (len * (len + 1)) * 0.5;
     return summary;
   }
   let r = null;
