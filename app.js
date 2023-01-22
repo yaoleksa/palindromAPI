@@ -18,12 +18,8 @@ const checkPalindrom = (input) => {
 };
 
 const howManyPalindromes = (s) => {
-  let len = s.length;
   const summary = {};
-  if(s.replace(new RegExp(s[0], 'g'), '').length == 0){
-    summary.quantity = (len * (len + 1)) * 0.5;
-    return summary;
-  }
+  let len = 0;
   let r = null;
   let part = null;
   for(let i = 0; i < s.length; i++){
@@ -46,7 +42,9 @@ app.get('/', (req, res) => {
     res.send(publicPath);
 });
 app.post('/', (req, res) => {
-    res.set('Access-Control-Allow-Origin', window.location.href);
+    res.set('Access-Control-Allow-Origin', 'https://red-resonance-422975.postman.co/');
+    res.set('Access-Control-Allow-Origin', 'http://localhost');
+    res.set('Access-Control-Allow-Origin', 'https://onrender.com/');
     const inp = JSON.parse(JSON.stringify(req.body));
     res.send(howManyPalindromes(inp.input));
 });
