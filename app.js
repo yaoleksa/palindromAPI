@@ -7,7 +7,6 @@ const app = express();
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(express.static(publicPath));
-
 // handler function block
 
 const checkPalindrom = (input) => {
@@ -47,6 +46,7 @@ app.get('/', (req, res) => {
     res.send(publicPath);
 });
 app.post('/', (req, res) => {
+    res.set('Access-Control-Allow-Origin', window.location.href);
     const inp = JSON.parse(JSON.stringify(req.body));
     res.send(howManyPalindromes(inp.input));
 });
