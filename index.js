@@ -3,7 +3,7 @@ const request = new XMLHttpRequest();
 const root = document.getElementById('root');
 const inp = document.createElement('textarea');
 inp.id = "inputArea";
-inp.placeholder = "Inpu word to count palindromes";
+inp.placeholder = "Input word to count palindromes";
 const p = document.createElement('p');
 p.id = "output";
 request.onload = () => {

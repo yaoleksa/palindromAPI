@@ -45,6 +45,7 @@ app.post('/', (req, res) => {
     res.set('Access-Control-Allow-Origin', 'https://red-resonance-422975.postman.co/');
     res.set('Access-Control-Allow-Origin', 'http://localhost');
     res.set('Access-Control-Allow-Origin', 'https://onrender.com/');
+    res.set('Access-Control-Allow-Origin', null);
     const inp = JSON.parse(JSON.stringify(req.body));
     res.send(howManyPalindromes(inp.input));
 });
