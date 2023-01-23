@@ -22,6 +22,9 @@ const howManyPalindromes = (s) => {
   let len = 0;
   let r = null;
   let part = null;
+  if(checkPalindrom(s)){
+    summary['base_word'] = s;
+  }
   for(let i = 0; i < s.length; i++){
     for(let j = i + 2; j <= s.length; j++){
       part = s.slice(i, j);

@@ -1,11 +1,10 @@
 #root{
   display:grid;
   grid-template-rows: auto;
+  margin: 2rem;
 }
 
 textarea {
-  margin-top: 1rem;
-  margin-left: 5rem;
   width: 15rem;
   height: 9rem;
   -moz-border-bottom-colors: none;
@@ -47,7 +46,6 @@ button {
   font-size: 13px;
   font-weight: 400;
   line-height: 1.15385;
-  margin-left: 6rem;
   margin-top: 0.5rem;
   outline: none;
   padding: 8px .8em;
